@@ -11,20 +11,19 @@
 - [Pip-Boy](https://www.Pip-Boy.com)
 - [Pip-Boy Apps](https://github.com/CodyTolene/pip-boy-apps)
 
-###Description
+###Description ###
 
-An abstract strategy board game for 2 players, similar to checkers. Originates
-from Madagascar.
+The classic Magic 8 Ball and all 20 of its responses. Spin/click either wheel or shake your pipboy to get a new response!
 
-### Controls
+### Controls ###
 
 | Input                | Action                                                                |
 | -------------------- | --------------------------------------------------------------------- |
-| Left wheel (rotate)  | Move the selector up and down on board                                |
-| Left wheel (press)   | Confirm the title screen, select piece, or restart after game is over |
-| Right wheel (rotate) | Move the selector left and right on board                             |
+| Left wheel (rotate)  | Shuffles the ball for a new response                                  |
+| Left wheel (press)   |                                                                       |
+| Right wheel (rotate) |                                                                       |
 
-### Credits
+### Credits ###
 
 - Claude threw most of this together, I'm no programmer but I edited a lot by
   hand.
