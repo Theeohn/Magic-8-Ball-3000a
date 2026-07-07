@@ -1,5 +1,5 @@
 // =============================================================================
-//  Name: magic 8 Ball
+//  Name: Magic 8 Ball
 //  Author: Theeohn Megistus
 //  License: MIT
 //  Repository: https://github.com/Theeohn/Magic-8-Ball-3000a-
