@@ -26,7 +26,7 @@ The updated Magic 8 Ball, all 20 original and plenty new responses. Plus a few r
 | Left wheel (rotate)  | Shuffles the ball for a new response                                  |
 | Left wheel (press)   |                                                                       |
 | Right wheel (rotate) |                                                                       |
-| Shake device         | 
+| Shake device         |                                                                       |
 
 ### Credits ###
 
