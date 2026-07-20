@@ -88,7 +88,7 @@
     h.drawString("by Theeohn", 26, 72);
 
     h.setColor(2).setFontMonofonto14().setFontAlign(1, 1);
-    h.drawString("Shake or use", 461, 279);
+    h.drawString("Use", 461, 279);
     h.drawString("a wheel to ask!", 461, 295);
 
     h.flip();
@@ -117,7 +117,7 @@
   }
 
   function shake() {
-    if (shaking) return;
+    if (timer) clearTimeout(timer);
     shaking = 1;
     step = 0;
     clickStep();
@@ -137,7 +137,7 @@
   draw(0, 0, idx);
 
   return {
-    id: "MAGIC8BALL",
+    id: "MAGIC8BALL+",
     notDefault: true,
     fullscreen: true,
     remove: function() {
