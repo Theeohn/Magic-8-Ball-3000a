@@ -255,7 +255,7 @@
   draw(0, 0, idx);
 
   return {
-    id: "MAGIC8BALL+",
+    id: "magic8ball+",
     notDefault: true,
     fullscreen: true,
 
