@@ -9,6 +9,7 @@
   const C = {
     ANSWERS: [
       "Yes",
+      "YES",
       "It is certain",
       "It is decidedly so",
       "Without a doubt",
@@ -18,25 +19,50 @@
       "Most likely",
       "Outlook good",
       "Signs point to yes",
+      "For sure",
+      "Absolutely",
+      "100% yes",
       "Reply hazy, try again",
       "Ask again later",
       "Better not tell you now",
       "Cannot predict now",
+      "Maybe",
+      "Possibly",
       "Concentrate and ask again",
       "Don't count on it",
+      "No",
+      "NO",
+      "Don't",
+      "Doutful",
+      "You should reconsider",
       "Very doubtful",
       "My reply is no",
       "My sources say no",
       "Outlook not so good",
+      "Absolutely not",
+    ],
+    SECRETS: [
+      "You sure ask a lot of questions",
+      "Well, it's possible",
+      "Be more realistic",
+      "Come again, this time in my ear?",
+      "Get good",
+      "Maybe?",
+      "Tooootally",
+      "Very improbable",
+      "404: Answer not found",
+      "Well yes, but actually no",
+      "Well no, but actually yes",
     ],
     GAPS: [60, 70, 90, 120, 160, 210, 270]
   };
 
-  let shaking = 0, step = 0, timer, idx = Math.randInt(C.ANSWERS.length), cache = [];
+  let shaking = 0, step = 0, timer, idx = Math.randInt(C.ANSWERS.length), cache = [], shakeCount = 0;
 
   function getLines(i) {
     if (cache[i]) return cache[i];
-    return (cache[i] = h.setFontMonofonto28().wrapString(C.ANSWERS[i], 154));
+    const text = i < C.ANSWERS.length ? C.ANSWERS[i] : C.SECRETS[i - C.ANSWERS.length];
+    return (cache[i] = h.setFontMonofonto28().wrapString(text, 154));
   }
 
   function draw(jx, jy, i) {  "ram";
@@ -45,6 +71,7 @@
    h.setColor(3).drawCircle(240 + jx, 160 + jy, 156);
    h.setColor(0).fillCircle(240 + jx, 160 + jy, 111);
    h.setColor(3).drawCircle(240 + jx, 160 + jy, 111);
+   
    if (i >= 0) {
      const lines = getLines(i), n = lines.length, y0 = 160 + jy - (n - 1) * 16;
      h.setClipRect(160 + jx, 80 + jy, 320 + jx, 240 + jy);
@@ -61,8 +88,8 @@
     h.drawString("by Theeohn", 26, 72);
 
     h.setColor(2).setFontMonofonto14().setFontAlign(1, 1);
-    h.drawString("Shake or use", 461, 279);
-    h.drawString("a wheel to ask!", 461, 295);
+    h.drawString("Use a", 461, 279);
+    h.drawString("wheel to ask!", 461, 295);
 
     h.flip();
     Pip.lastFlip = getTime();
@@ -70,7 +97,14 @@
 
   function finish() {
     shaking = 0;
-    idx = Math.randInt(C.ANSWERS.length);
+    shakeCount++;
+    
+    if (shakeCount % 12 === 0) {
+      idx = C.ANSWERS.length + Math.randInt(C.SECRETS.length);
+    } else {
+      idx = Math.randInt(C.ANSWERS.length);
+    }
+    
     draw(0, 0, idx);
   }
 
@@ -83,7 +117,7 @@
   }
 
   function shake() {
-    if (shaking) return;
+    if (timer) clearTimeout(timer);
     shaking = 1;
     step = 0;
     clickStep();
@@ -107,7 +141,7 @@
     notDefault: true,
     fullscreen: true,
     remove: function() {
-      clearTimeout(timer);
+      if (timer) clearTimeout(timer);
       Pip.removeListener("knob1", onKnob1);
       Pip.removeListener("knob2", onKnob2);
       Pip.audioStop();
