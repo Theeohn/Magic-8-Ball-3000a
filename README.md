@@ -26,6 +26,7 @@ The classic Magic 8 Ball and all 20 of its responses. Spin/click either wheel or
 | Left wheel (rotate)  | Shuffles the ball for a new response                                  |
 | Left wheel (press)   |                                                                       |
 | Right wheel (rotate) |                                                                       |
+| Shake device         |                                                                       |
 
 ### Credits ###
 
