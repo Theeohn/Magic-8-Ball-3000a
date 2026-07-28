@@ -1,4 +1,4 @@
-# Magic 8 Ball
+# Magic 8 Ball+
 
 ### Info
 
@@ -15,9 +15,9 @@
 
 - [Alright Joe]
 
-###Description ###
+### Description ###
 
-The classic Magic 8 Ball and all 20 of its responses. Spin/click either wheel or shake your pipboy to get a new response!
+A classic and an updated Magic 8 Ball, all 20 original and plenty new responses. Plus a few rare resonses if you keep asking! Shake your pipboy or spin/press a wheel to get a new answer!
 
 ### Controls ###
 
@@ -31,7 +31,7 @@ The classic Magic 8 Ball and all 20 of its responses. Spin/click either wheel or
 ### Credits ###
 
 - Claude threw most of this together, I'm no programmer but I edited a lot by
-  hand.
+  hand. Shake implementation done by @Alright Joe.
 
 ### License(s)
 
